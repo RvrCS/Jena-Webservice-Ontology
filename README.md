@@ -1,27 +1,28 @@
-### Webservice Ontology
+### <span style="color:blue">Webservice Ontology</span>
 
 **Java v11 - Spring v2.5.4 – Jena v3.12.0**
 
 **Webservice HOST:** [https://apimodelador.borrego-research.com/webserviceontology/videotagger](https://apimodelador.borrego-research.com/webserviceontology/videotagger)
 
-- **ArtifactLocation:** _Es la URL del video en drive._
-- **ArtifactTagsTimestamp:** _Array de objetos tipo TagTimestamp que contiene el tag y el timestamp._
+- **ArtifactLocation:** _The URL of the video in Google Drive._
+- **ArtifactTagsTimestamp:** _Array of objects of type TagTimestamp containing the tag and the timestamp._
 
-#### GET Endpoints
+#### <span style="color:green">GET Endpoints</span>
 
 1. **/videos**
-   - Este endpoint obtiene todos los videos con su respectivo _artifactLocation_ y su array de _artifactTagsTimestamp._
+   - Retrieves all videos with their respective artifactLocation and an array of artifactTagsTimestamp. Provides a comprehensive overview of available videos._
 
 2. **/videos/{tag}**
-   - Este endpoint obtiene todos los videos en base al TAG dado en la URL, y obtendrá todos los videos que contengan ese respectivo TAG con el _artifactLocation_ y su array de _artifactTagsTimestamp._
+   - Retrieves videos based on the specified TAG in the URL. Returns all videos containing the provided TAG with their artifactLocation and corresponding artifactTagsTimestamp._
 
 3. **/videos/all**
-   - Este endpoint regresa todos los tags que hay en la ontologia guardados, sin la relación entre sus _artifactLocation_.
+   - Returns a list of all tags stored in the ontology, excluding the relationship with their artifactLocation. Useful for obtaining a complete list of available tags..
 
-#### POST Endpoints
+
+#### <span style="color:orange">POST Endpoints</span>
 
 1. **/videos/save**
-   - Este endpoint espera recibir un body para guardar la metadata de un video, puede enviarse sin _artifactTags_. El siguiente JSON es el que se espera recibir.
+   - Expects a JSON body to save the metadata of a video. It can be sent without artifactTags. Use this endpoint to store details about a video, including name, location, format, and additional information.
    ```json
    {
      "artifactName": "",
@@ -32,3 +33,23 @@
      "isUsedBy": "",
      "hasUsedIn": ""
    }
+   
+
+#### <span style="color:blue">PUT Endpoints</span>
+
+1. **/videos/tag**
+
+Expects a JSON body to update a tag, URL, or timestamp for a video. Use this endpoint to modify the tag, URL, or timestamp of a video.
+
+```json
+{
+
+    "url": "",
+
+    "artifactTag": "",
+
+    "timestamp": ""
+
+}
+
+Made by : Ing. River Damian Torres Urrutia
